@@ -1,0 +1,21 @@
+.container {
+  width: 50rem;
+}
+.border {
+  margin-top: 100px;
+  padding: 50px;
+  border: 1px solid #beb6b6;
+  border-radius: 10px;
+}
+
+.home-border {
+  margin: 100px auto;
+  padding: 50px;
+  border: 1px solid #beb6b6;
+  border-radius: 10px;
+  width: 70rem;
+}
+
+.center {
+  text-align: center;
+}

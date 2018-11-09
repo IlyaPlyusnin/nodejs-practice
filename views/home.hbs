@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <title>Welcome</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/logout">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="home-border">
+        <p class="center">Welcome {{user}}</p>
+        {{#if owe}}
+        <div class="alert alert-danger">
+            You owe ${{sum}}
+        </div>
+        {{/if}}
+        <form method="post" action="/home">
+            <input type="hidden" name="activated" value="true">
+            <button type="submit" class="btn btn-outline-primary">Open a new Credit Card</button>
+        </form>
+        <br>
+
+        {{#if activated}}
+        <div class="alert alert-success" role="alert">
+            Your credit card is activated. You can now fill out your purchases for the month!
+        </div>
+        <div class="card">
+            <div class="card-body">
+                Your credit card limit is $1000 and APR is 35%
+            </div>
+        </div>
+        <br>
+        <p>
+            <a class="btn btn-outline-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button"
+                aria-expanded="false" aria-controls="multiCollapseExample1">Fill out Payments and Charges</a>
+        </p>
+        <div class="row">
+            <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                    <form method="post" action="/charges">
+
+                        <div class="card card-body"> Day 0:<br> <input type="text" name="day0Charge" class="form-control charge"
+                                placeholder="Enter day 0 charge"> <br> <input type="text" name="day0Payment" class="form-control payment"
+                                placeholder="Enter day 0 payment"> </div> <br>
+                        <div class="card card-body"> Day 1:<br> <input type="text" name="day1Charge" class="form-control charge"
+                                placeholder="Enter day 1 charge"> <br> <input type="text" name="day1Payment" class="form-control payment"
+                                placeholder="Enter day 1 payment"> </div> <br>
+                        <div class="card card-body"> Day 2:<br> <input type="text" name="day2Charge" class="form-control charge"
+                                placeholder="Enter day 2 charge"> <br> <input type="text" name="day2Payment" class="form-control payment"
+                                placeholder="Enter day 2 payment"> </div> <br>
+                        <div class="card card-body"> Day 3:<br> <input type="text" name="day3Charge" class="form-control charge"
+                                placeholder="Enter day 3 charge"> <br> <input type="text" name="day3Payment" class="form-control payment"
+                                placeholder="Enter day 3 payment"> </div> <br>
+                        <div class="card card-body"> Day 4:<br> <input type="text" name="day4Charge" class="form-control charge"
+                                placeholder="Enter day 4 charge"> <br> <input type="text" name="day4Payment" class="form-control payment"
+                                placeholder="Enter day 4 payment"> </div> <br>
+                        <div class="card card-body"> Day 5:<br> <input type="text" name="day5Charge" class="form-control charge"
+                                placeholder="Enter day 5 charge"> <br> <input type="text" name="day5Payment" class="form-control payment"
+                                placeholder="Enter day 5 payment"> </div> <br>
+                        <div class="card card-body"> Day 6:<br> <input type="text" name="day6Charge" class="form-control charge"
+                                placeholder="Enter day 6 charge"> <br> <input type="text" name="day6Payment" class="form-control payment"
+                                placeholder="Enter day 6 payment"> </div> <br>
+                        <div class="card card-body"> Day 7:<br> <input type="text" name="day7Charge" class="form-control charge"
+                                placeholder="Enter day 7 charge"> <br> <input type="text" name="day7Payment" class="form-control payment"
+                                placeholder="Enter day 7 payment"> </div> <br>
+                        <div class="card card-body"> Day 8:<br> <input type="text" name="day8Charge" class="form-control charge"
+                                placeholder="Enter day 8 charge"> <br> <input type="text" name="day8Payment" class="form-control payment"
+                                placeholder="Enter day 8 payment"> </div> <br>
+                        <div class="card card-body"> Day 9:<br> <input type="text" name="day9Charge" class="form-control charge"
+                                placeholder="Enter day 9 charge"> <br> <input type="text" name="day9Payment" class="form-control payment"
+                                placeholder="Enter day 9 payment"> </div> <br>
+                        <div class="card card-body"> Day 10:<br> <input type="text" name="day10Charge" class="form-control charge"
+                                placeholder="Enter day 10 charge"> <br> <input type="text" name="day10Payment" class="form-control payment"
+                                placeholder="Enter day 10 payment"> </div> <br>
+                        <div class="card card-body"> Day 11:<br> <input type="text" name="day11Charge" class="form-control charge"
+                                placeholder="Enter day 11 charge"> <br> <input type="text" name="day11Payment" class="form-control payment"
+                                placeholder="Enter day 11 payment"> </div> <br>
+                        <div class="card card-body"> Day 12:<br> <input type="text" name="day12Charge" class="form-control charge"
+                                placeholder="Enter day 12 charge"> <br> <input type="text" name="day12Payment" class="form-control payment"
+                                placeholder="Enter day 12 payment"> </div> <br>
+                        <div class="card card-body"> Day 13:<br> <input type="text" name="day13Charge" class="form-control charge"
+                                placeholder="Enter day 13 charge"> <br> <input type="text" name="day13Payment" class="form-control payment"
+                                placeholder="Enter day 13 payment"> </div> <br>
+                        <div class="card card-body"> Day 14:<br> <input type="text" name="day14Charge" class="form-control charge"
+                                placeholder="Enter day 14 charge"> <br> <input type="text" name="day14Payment" class="form-control payment"
+                                placeholder="Enter day 14 payment"> </div> <br>
+                        <div class="card card-body"> Day 15:<br> <input type="text" name="day15Charge" class="form-control charge"
+                                placeholder="Enter day 15 charge"> <br> <input type="text" name="day15Payment" class="form-control payment"
+                                placeholder="Enter day 15 payment"> </div> <br>
+                        <div class="card card-body"> Day 16:<br> <input type="text" name="day16Charge" class="form-control charge"
+                                placeholder="Enter day 16 charge"> <br> <input type="text" name="day16Payment" class="form-control payment"
+                                placeholder="Enter day 16 payment"> </div> <br>
+                        <div class="card card-body"> Day 17:<br> <input type="text" name="day17Charge" class="form-control charge"
+                                placeholder="Enter day 17 charge"> <br> <input type="text" name="day17Payment" class="form-control payment"
+                                placeholder="Enter day 17 payment"> </div> <br>
+                        <div class="card card-body"> Day 18:<br> <input type="text" name="day18Charge" class="form-control charge"
+                                placeholder="Enter day 18 charge"> <br> <input type="text" name="day18Payment" class="form-control payment"
+                                placeholder="Enter day 18 payment"> </div> <br>
+                        <div class="card card-body"> Day 19:<br> <input type="text" name="day19Charge" class="form-control charge"
+                                placeholder="Enter day 19 charge"> <br> <input type="text" name="day19Payment" class="form-control payment"
+                                placeholder="Enter day 19 payment"> </div> <br>
+                        <div class="card card-body"> Day 20:<br> <input type="text" name="day20Charge" class="form-control charge"
+                                placeholder="Enter day 20 charge"> <br> <input type="text" name="day20Payment" class="form-control payment"
+                                placeholder="Enter day 20 payment"> </div> <br>
+                        <div class="card card-body"> Day 21:<br> <input type="text" name="day21Charge" class="form-control charge"
+                                placeholder="Enter day 21 charge"> <br> <input type="text" name="day21Payment" class="form-control payment"
+                                placeholder="Enter day 21 payment"> </div> <br>
+                        <div class="card card-body"> Day 22:<br> <input type="text" name="day22Charge" class="form-control charge"
+                                placeholder="Enter day 22 charge"> <br> <input type="text" name="day22Payment" class="form-control payment"
+                                placeholder="Enter day 22 payment"> </div> <br>
+                        <div class="card card-body"> Day 23:<br> <input type="text" name="day23Charge" class="form-control charge"
+                                placeholder="Enter day 23 charge"> <br> <input type="text" name="day23Payment" class="form-control payment"
+                                placeholder="Enter day 23 payment"> </div> <br>
+                        <div class="card card-body"> Day 24:<br> <input type="text" name="day24Charge" class="form-control charge"
+                                placeholder="Enter day 24 charge"> <br> <input type="text" name="day24Payment" class="form-control payment"
+                                placeholder="Enter day 24 payment"> </div> <br>
+                        <div class="card card-body"> Day 25:<br> <input type="text" name="day25Charge" class="form-control charge"
+                                placeholder="Enter day 25 charge"> <br> <input type="text" name="day25Payment" class="form-control payment"
+                                placeholder="Enter day 25 payment"> </div> <br>
+                        <div class="card card-body"> Day 26:<br> <input type="text" name="day26Charge" class="form-control charge"
+                                placeholder="Enter day 26 charge"> <br> <input type="text" name="day26Payment" class="form-control payment"
+                                placeholder="Enter day 26 payment"> </div> <br>
+                        <div class="card card-body"> Day 27:<br> <input type="text" name="day27Charge" class="form-control charge"
+                                placeholder="Enter day 27 charge"> <br> <input type="text" name="day27Payment" class="form-control payment"
+                                placeholder="Enter day 27 payment"> </div> <br>
+                        <div class="card card-body"> Day 28:<br> <input type="text" name="day28Charge" class="form-control charge"
+                                placeholder="Enter day 28 charge"> <br> <input type="text" name="day28Payment" class="form-control payment"
+                                placeholder="Enter day 28 payment"> </div> <br>
+                        <div class="card card-body"> Day 29:<br> <input type="text" name="day29Charge" class="form-control charge"
+                                placeholder="Enter day 29 charge"> <br> <input type="text" name="day29Payment" class="form-control payment"
+                                placeholder="Enter day 29 payment"> </div> <br>
+
+                        <input type="number" class="dayInput form-control" placeholder="Type in the day to calculate its outstanding balance">
+                        <br>
+                        <button id="calcBtn" class="btn btn-outline-primary">Calculate Outstading Balance So Far</button>
+                        <br>
+                        <br>
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="output"></p>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="center">
+                            <button type="submit" class="btn btn-outline-primary">End Month</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        {{/if}}
+    </div>
+
+
+    <script src="./JS/calculate.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="./JS/bootstrap.min.js"></script>
+</body>
+
+</html>

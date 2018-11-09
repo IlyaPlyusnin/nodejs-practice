@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <title>Welcome</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="border">
+            {{#if errors}}
+            {{#each errors}}
+            <div class="alert alert-danger">
+                {{this}}
+            </div>
+            {{/each}}
+            {{/if}}
+            <p class="center">Register</p>
+            <form method="post" action="/register">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control" name="username" placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label>Full name</label>
+                    <input type="text" class="form-control" name="fullname" placeholder="Enter fullname">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" class="form-control" name="passwordMatch" placeholder="Confirm Password">
+                </div>
+                <div class="center">
+                    <button type="submit" class="btn btn-outline-primary">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./JS/bootstrap.min.js"></script>
+</body>
+
+</html>
